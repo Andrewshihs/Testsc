@@ -10,10 +10,19 @@ import UIKit
 
 class firstViewController: UIViewController {
 
+    @IBOutlet weak var HuiTu: UIImageView!
+    @IBOutlet weak var GGCamera: UIButton!
+    @IBAction func VoiceButton(_ sender: UIButton) {
+        GGCamera.isHidden = true
+    }
+    @IBAction func OverButton(_ sender: UIButton) {
+        GGCamera.isHidden = false
+        HuiTu.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        HuiTu.isHidden = true
+                // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

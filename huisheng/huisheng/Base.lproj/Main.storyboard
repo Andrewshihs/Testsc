@@ -34,28 +34,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
-                                <rect key="frame" x="172" y="748" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
+                                <rect key="frame" x="165" y="744" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="录音"/>
+                                <state key="normal" image="屏幕快照 2018-08-30 12.59.24"/>
+                                <connections>
+                                    <action selector="OverButton:" destination="ur6-JC-W74" eventType="touchUpInside" id="TLs-Ze-Ja4"/>
+                                    <action selector="VoiceButton:" destination="ur6-JC-W74" eventType="touchDown" id="aoE-VK-MW9"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-wV-ydz">
-                                <rect key="frame" x="156" y="391" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ID8-wV-ydz">
+                                <rect key="frame" x="126" y="375" width="123" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="照片搞怪"/>
+                                <state key="normal" image="搞怪"/>
                                 <connections>
                                     <segue destination="ynn-e7-bYr" kind="show" id="wn3-Tf-80X"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="屏幕快照 2018-08-30 12.58.46" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
+                                <rect key="frame" x="16" y="88" width="343" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fT5-UB-OMb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bcq-ZE-8Vx"/>
+                    <navigationItem key="navigationItem" id="bcq-ZE-8Vx">
+                        <barButtonItem key="rightBarButtonItem" image="back" style="plain" id="59o-3P-DF1">
+                            <connections>
+                                <segue destination="Nq7-XB-LE2" kind="show" id="6q7-D8-PHt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="GGCamera" destination="ID8-wV-ydz" id="mux-Em-Zck"/>
+                        <outlet property="HuiTu" destination="MMv-PL-vE0" id="URT-a9-2yv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRb-jF-eaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="-4"/>
+            <point key="canvasLocation" x="-234.40000000000001" y="-4.4334975369458132"/>
         </scene>
         <!--SaveImage-->
         <scene sceneID="WbU-eP-1RL">
@@ -75,7 +93,7 @@
         <!--View Controller-->
         <scene sceneID="Z48-rV-Pd5">
             <objects>
-                <viewController id="ynn-e7-bYr" sceneMemberID="viewController">
+                <viewController id="ynn-e7-bYr" customClass="ViewController" customModule="huisheng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fRA-Ze-Jdm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,4 +106,10 @@
             <point key="canvasLocation" x="537" y="-401"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="14" height="22"/>
+        <image name="屏幕快照 2018-08-30 12.58.46" width="391" height="775"/>
+        <image name="屏幕快照 2018-08-30 12.59.24" width="46" height="39"/>
+        <image name="搞怪" width="123" height="62"/>
+    </resources>
 </document>
