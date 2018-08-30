@@ -12,27 +12,30 @@ class firstViewController: UIViewController {
 
     @IBOutlet weak var HuiTu: UIImageView!
     @IBOutlet weak var GGCamera: UIButton!
+    @IBOutlet weak var ImageFinsh: UIButton!
     @IBAction func VoiceButton(_ sender: UIButton) {
         GGCamera.isHidden = true
     }
+    
     @IBAction func OverButton(_ sender: UIButton) {
         GGCamera.isHidden = false
         HuiTu.isHidden = false
+         ImageFinsh.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        HuiTu.isHidden = true
                 // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        ImageFinsh.isHidden = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     
-    
-
     /*
     // MARK: - Navigation
 
