@@ -13,6 +13,8 @@
 		BF73F38421363A7500E15B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF73F38321363A7500E15B7F /* Assets.xcassets */; };
 		BF73F38721363A7500E15B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */; };
 		BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F9AB2136DA440052B3EB /* firstViewController.swift */; };
+		BFAD50592138219100A4137E /* iPhone X – 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAD50582138219000A4137E /* iPhone X – 1.png */; };
+		BFAD505B213822C400A4137E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAD505A213822C400A4137E /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BF73F38621363A7500E15B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF73F38821363A7500E15B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF89F9AB2136DA440052B3EB /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
+		BFAD50582138219000A4137E /* iPhone X – 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone X – 1.png"; path = "../../icon/iPhone X – 1.png"; sourceTree = "<group>"; };
+		BFAD505A213822C400A4137E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../icon/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				BF73F38021363A7500E15B7F /* Main.storyboard */,
 				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
+				BFAD505A213822C400A4137E /* logo.png */,
+				BFAD50582138219000A4137E /* iPhone X – 1.png */,
 				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
 				BF73F38821363A7500E15B7F /* Info.plist */,
 			);
@@ -127,7 +133,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF73F38721363A7500E15B7F /* LaunchScreen.storyboard in Resources */,
+				BFAD505B213822C400A4137E /* logo.png in Resources */,
 				BF73F38421363A7500E15B7F /* Assets.xcassets in Resources */,
+				BFAD50592138219100A4137E /* iPhone X – 1.png in Resources */,
 				BF73F38221363A7500E15B7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
