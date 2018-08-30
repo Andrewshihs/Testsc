@@ -15,6 +15,8 @@
 		BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F9AB2136DA440052B3EB /* firstViewController.swift */; };
 		BFAD50592138219100A4137E /* iPhone X – 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAD50582138219000A4137E /* iPhone X – 1.png */; };
 		BFAD505B213822C400A4137E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAD505A213822C400A4137E /* logo.png */; };
+		BFAD5061213827FE00A4137E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAD5060213827FE00A4137E /* AudioToolbox.framework */; };
+		BFAD50672138350000A4137E /* SaveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD50662138350000A4137E /* SaveImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,9 @@
 		BF89F9AB2136DA440052B3EB /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
 		BFAD50582138219000A4137E /* iPhone X – 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhone X – 1.png"; path = "../../icon/iPhone X – 1.png"; sourceTree = "<group>"; };
 		BFAD505A213822C400A4137E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../icon/logo.png; sourceTree = "<group>"; };
+		BFAD505C213827F800A4137E /* huisheng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = huisheng.entitlements; sourceTree = "<group>"; };
+		BFAD5060213827FE00A4137E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BFAD50662138350000A4137E /* SaveImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAD5061213827FE00A4137E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +52,7 @@
 			children = (
 				BF73F37B21363A7500E15B7F /* huisheng */,
 				BF73F37A21363A7500E15B7F /* Products */,
+				BFAD505D213827F800A4137E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,9 +67,11 @@
 		BF73F37B21363A7500E15B7F /* huisheng */ = {
 			isa = PBXGroup;
 			children = (
+				BFAD505C213827F800A4137E /* huisheng.entitlements */,
 				BF73F37C21363A7500E15B7F /* AppDelegate.swift */,
 				BF73F37E21363A7500E15B7F /* ViewController.swift */,
 				BF73F38021363A7500E15B7F /* Main.storyboard */,
+				BFAD50662138350000A4137E /* SaveImageViewController.swift */,
 				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
 				BFAD505A213822C400A4137E /* logo.png */,
@@ -71,6 +80,14 @@
 				BF73F38821363A7500E15B7F /* Info.plist */,
 			);
 			path = huisheng;
+			sourceTree = "<group>";
+		};
+		BFAD505D213827F800A4137E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFAD5060213827FE00A4137E /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +123,11 @@
 					BF73F37821363A7500E15B7F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -148,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF73F37F21363A7500E15B7F /* ViewController.swift in Sources */,
+				BFAD50672138350000A4137E /* SaveImageViewController.swift in Sources */,
 				BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */,
 				BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */,
 			);
@@ -286,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = huisheng/huisheng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CAAH5B24K4;
 				INFOPLIST_FILE = huisheng/Info.plist;
@@ -301,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = huisheng/huisheng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CAAH5B24K4;
 				INFOPLIST_FILE = huisheng/Info.plist;
