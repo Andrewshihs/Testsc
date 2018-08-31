@@ -31,13 +31,13 @@ class firstViewController: UIViewController {
         
                 // Do any additional setup after loading the view.
     }
-    //圆形进度条动画
     
+    //圆形进度条动画
     func CircleAnimate(){
         shapeLayer = CAShapeLayer()
         self.view.layer.addSublayer(shapeLayer)
         //使用贝塞尔曲线画一个圆形  注意位置
-        let onePath = UIBezierPath(arcCenter: CGPoint(x:187,y:740), radius: 25, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+        let onePath = UIBezierPath(arcCenter: CGPoint(x:187,y:739), radius: 25, startAngle: 1.5, endAngle: CGFloat(Double.pi*2.5), clockwise: true)
         //CAShapeLayer 的路径
         shapeLayer.path = onePath.cgPath
         //描线的线宽
@@ -54,7 +54,7 @@ class firstViewController: UIViewController {
     @objc func animate(){
         shapeLayer.strokeColor = UIColor.blue.cgColor
         if  shapeLayer.strokeEnd < 1{
-            self.shapeLayer.strokeEnd += 0.2
+            self.shapeLayer.strokeEnd += 0.01
         }else{
             timer.invalidate()
         }
