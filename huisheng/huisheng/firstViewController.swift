@@ -27,8 +27,6 @@ class firstViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
                 // Do any additional setup after loading the view.
     }
     
@@ -54,7 +52,7 @@ class firstViewController: UIViewController {
     @objc func animate(){
         shapeLayer.strokeColor = UIColor.blue.cgColor
         if  shapeLayer.strokeEnd < 1{
-            self.shapeLayer.strokeEnd += 0.01
+            self.shapeLayer.strokeEnd += 0.02
         }else{
             timer.invalidate()
         }
@@ -65,6 +63,10 @@ class firstViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         ImageFinsh.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+     //   super.viewWillDisappear(<#T##animated: Bool##Bool#>)
+        HuiTu.isHidden = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
