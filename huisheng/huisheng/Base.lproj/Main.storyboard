@@ -43,10 +43,10 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone X – 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
-                                <rect key="frame" x="16" y="116" width="343" height="563"/>
+                                <rect key="frame" x="16" y="116" width="343" height="577"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
-                                <rect key="frame" x="170" y="723" width="35" height="35"/>
+                                <rect key="frame" x="170" y="737" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="mxN-zb-a8p"/>
                                     <constraint firstAttribute="width" constant="35" id="myK-Se-x37"/>
@@ -70,11 +70,11 @@
                             <constraint firstItem="ID8-wV-ydz" firstAttribute="centerY" secondItem="lLS-e6-5cO" secondAttribute="centerY" id="3dM-mc-tSN"/>
                             <constraint firstItem="fT5-UB-OMb" firstAttribute="trailing" secondItem="MMv-PL-vE0" secondAttribute="trailing" constant="16" id="3qL-Q6-lc6"/>
                             <constraint firstItem="JOa-9O-hGy" firstAttribute="top" secondItem="MMv-PL-vE0" secondAttribute="bottom" constant="44" id="4zo-Lz-XyT"/>
+                            <constraint firstAttribute="bottom" secondItem="JOa-9O-hGy" secondAttribute="bottom" constant="40" id="616-fM-MB3"/>
                             <constraint firstItem="ID8-wV-ydz" firstAttribute="centerX" secondItem="lLS-e6-5cO" secondAttribute="centerX" id="COM-9o-wLE"/>
                             <constraint firstItem="fT5-UB-OMb" firstAttribute="trailing" secondItem="pzd-Ap-tlD" secondAttribute="trailing" constant="16" id="DeT-Wo-cIQ"/>
                             <constraint firstItem="pzd-Ap-tlD" firstAttribute="top" secondItem="fT5-UB-OMb" secondAttribute="top" constant="18" id="HFM-hY-GpK"/>
                             <constraint firstItem="MMv-PL-vE0" firstAttribute="leading" secondItem="fT5-UB-OMb" secondAttribute="leading" constant="16" id="OXz-1c-05j"/>
-                            <constraint firstItem="fT5-UB-OMb" firstAttribute="bottom" secondItem="JOa-9O-hGy" secondAttribute="bottom" constant="20" id="hDB-0p-rMk"/>
                             <constraint firstItem="MMv-PL-vE0" firstAttribute="top" secondItem="fT5-UB-OMb" secondAttribute="top" constant="72" id="oyH-1r-bFQ"/>
                             <constraint firstItem="JOa-9O-hGy" firstAttribute="centerX" secondItem="lLS-e6-5cO" secondAttribute="centerX" id="xOX-GB-8Jd"/>
                         </constraints>
@@ -185,6 +185,7 @@
         <image name="搞怪" width="123" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3Gj-Ir-InG"/>
         <segue reference="hce-0F-Im4"/>
     </inferredMetricsTieBreakers>
 </document>
