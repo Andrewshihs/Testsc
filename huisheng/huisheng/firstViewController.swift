@@ -12,6 +12,8 @@ class firstViewController: UIViewController {
     
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
+    let screenh = UIScreen.main.bounds.size.height
+    let screenw = UIScreen.main.bounds.size.width
     @IBOutlet weak var HuiTu: UIImageView!
     @IBOutlet weak var GGCamera: UIButton!
     @IBOutlet weak var ImageFinsh: UIButton!
@@ -35,7 +37,7 @@ class firstViewController: UIViewController {
         shapeLayer = CAShapeLayer()
         self.view.layer.addSublayer(shapeLayer)
         //使用贝塞尔曲线画一个圆形  注意位置
-        let onePath = UIBezierPath(arcCenter: CGPoint(x:187,y:739), radius: 25, startAngle: 1.5, endAngle: CGFloat(Double.pi*2.5), clockwise: true)
+        let onePath = UIBezierPath(arcCenter: CGPoint(x:screenw/2,y:(screenh-74)), radius: 25, startAngle: 1.5, endAngle: CGFloat(Double.pi*2.5), clockwise: true)
         //CAShapeLayer 的路径
         shapeLayer.path = onePath.cgPath
         //描线的线宽
