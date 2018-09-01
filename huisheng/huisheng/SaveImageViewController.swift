@@ -10,10 +10,31 @@ import UIKit
 
 class SaveImageViewController: UIViewController {
 
+    @IBOutlet weak var HuiShengImage: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var OverSaveButton: UIButton!
+    @IBOutlet weak var ShareButton: UIButton!
+    @IBOutlet weak var SaveButton: UIButton!
+    
+    @IBAction func Share(_ sender: UIButton) {
+        
+    }
+    @IBAction func SaveButton(_ sender: UIButton) {
+        backButton.isHidden = true
+        SaveButton.isHidden = true
+        OverSaveButton.isHidden = false
+        ShareButton.isHidden = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        backButton.isHidden = false
+        SaveButton.isHidden = false
+        OverSaveButton.isHidden = true
+        ShareButton.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
