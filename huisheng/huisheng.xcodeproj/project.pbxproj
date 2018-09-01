@@ -15,7 +15,6 @@
 		BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F9AB2136DA440052B3EB /* firstViewController.swift */; };
 		BF95699E213A359E00C6A427 /* iPhone X – 1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF95699D213A359E00C6A427 /* iPhone X – 1.png */; };
 		BF9569A0213A35F900C6A427 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF95699F213A35F900C6A427 /* logo.png */; };
-		BFAD5061213827FE00A4137E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAD5060213827FE00A4137E /* AudioToolbox.framework */; };
 		BFAD50672138350000A4137E /* SaveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAD50662138350000A4137E /* SaveImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFAD5061213827FE00A4137E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,14 +67,14 @@
 			children = (
 				BFAD505C213827F800A4137E /* huisheng.entitlements */,
 				BF73F37C21363A7500E15B7F /* AppDelegate.swift */,
-				BF73F37E21363A7500E15B7F /* ViewController.swift */,
-				BF73F38021363A7500E15B7F /* Main.storyboard */,
 				BFAD50662138350000A4137E /* SaveImageViewController.swift */,
+				BF73F37E21363A7500E15B7F /* ViewController.swift */,
 				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
+				BF73F38021363A7500E15B7F /* Main.storyboard */,
+				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
 				BF95699F213A35F900C6A427 /* logo.png */,
 				BF95699D213A359E00C6A427 /* iPhone X – 1.png */,
-				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
 				BF73F38821363A7500E15B7F /* Info.plist */,
 			);
 			path = huisheng;
@@ -122,7 +120,7 @@
 				TargetAttributes = {
 					BF73F37821363A7500E15B7F = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 1;
@@ -310,10 +308,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = huisheng/huisheng.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAAH5B24K4;
 				INFOPLIST_FILE = huisheng/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = huisheng.huisheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -328,10 +327,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = huisheng/huisheng.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAAH5B24K4;
 				INFOPLIST_FILE = huisheng/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = huisheng.huisheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";

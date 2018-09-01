@@ -190,7 +190,7 @@
                                     <action selector="Album:" destination="ynn-e7-bYr" eventType="touchUpInside" id="BPz-3p-tWc"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="搞怪" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
                                 <rect key="frame" x="16" y="189" width="343" height="434"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -224,7 +224,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZCg-J4-AWQ"/>
                     <connections>
-                        <outlet property="CameraImage" destination="tod-o2-zzY" id="SeA-es-OoH"/>
+                        <outlet property="CameraImage" destination="tod-o2-zzY" id="gUw-D3-fXG"/>
+                        <outlet property="takePictureButton" destination="0j7-3O-CU9" id="1hH-mu-vNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m2-ql-MH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
