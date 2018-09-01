@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var CameraImage: UIImageView!
+    @IBAction func Album(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func Camera(_ sender: UIButton) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
          
