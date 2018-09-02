@@ -13,7 +13,8 @@ import MobileCoreServices
 
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
+    
+    
     @IBOutlet weak var CameraImage: UIImageView!
     @IBOutlet weak var takePictureButton: UIButton!
     var avPlayerViewController: AVPlayerViewController!
@@ -30,8 +31,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         // Do any additional setup after loading the view, typically from a nib.
     }
+   
     override func viewWillAppear(_ animated: Bool) {
     //    self.navigationController?.isNavigationBarHidden = false
     }
@@ -39,7 +42,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         super.viewDidAppear(animated)
         updateDisplay()
     }
-  
+    override func viewWillDisappear(_ animated: Bool) {
+       
+    }
     func updateDisplay() {
         if let mediaType = lastChosenMediaType {
             if mediaType == (kUTTypeImage as NSString) as String {

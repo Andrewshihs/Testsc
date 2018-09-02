@@ -30,7 +30,7 @@
         <!--first-->
         <scene sceneID="NkL-39-PKR">
             <objects>
-                <viewController title="first" id="ur6-JC-W74" customClass="firstViewController" customModule="huisheng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" title="first" id="ur6-JC-W74" customClass="firstViewController" customModule="huisheng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLS-e6-5cO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,9 @@
                                 <rect key="frame" x="328" y="62" width="31" height="30"/>
                                 <state key="normal" title="完成"/>
                                 <connections>
-                                    <segue destination="Nq7-XB-LE2" kind="push" id="3Gj-Ir-InG"/>
+                                    <action selector="ImageFinsh:" destination="ur6-JC-W74" eventType="touchUpInside" id="J0z-US-swR"/>
+                                    <action selector="ImageFinsh:" destination="w0Y-bv-H98" eventType="touchUpInside" id="Ql1-U1-x9v"/>
+                                    <segue destination="Nq7-XB-LE2" kind="push" identifier="save" id="3Gj-Ir-InG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,6 +90,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRb-jF-eaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="w0Y-bv-H98" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-234.40000000000001" y="-4.4334975369458132"/>
         </scene>
@@ -112,53 +115,81 @@
                                     <segue destination="ur6-JC-W74" kind="push" id="hce-0F-Im4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
                                 <rect key="frame" x="22" y="243" width="337" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20X-g7-d07">
-                                <rect key="frame" x="74" y="732" width="46" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="返回"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-UB-Tz4">
+                                <rect key="frame" x="0.0" y="702" width="375" height="110"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20X-g7-d07">
+                                <rect key="frame" x="75" y="729" width="69" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="66d-9W-ODE"/>
+                                    <constraint firstAttribute="width" constant="69" id="ujk-9A-44x"/>
+                                </constraints>
+                                <state key="normal" image="已经返回"/>
                                 <connections>
                                     <segue destination="ur6-JC-W74" kind="push" id="dnn-wu-6Jx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzB-ck-El9">
-                                <rect key="frame" x="250" y="740" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="保存"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzB-ck-El9">
+                                <rect key="frame" x="220" y="722" width="90" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="ORp-vh-XhA"/>
+                                    <constraint firstAttribute="height" constant="67" id="RIV-ek-vrX"/>
+                                </constraints>
+                                <state key="normal" image="已保存"/>
                                 <connections>
                                     <action selector="SaveButton:" destination="Nq7-XB-LE2" eventType="touchUpInside" id="Pp5-Ai-miP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-UB-Tz4">
-                                <rect key="frame" x="0.0" y="702" width="375" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-fa-NrW">
-                                <rect key="frame" x="254" y="740" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="分享"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAP-fa-NrW">
+                                <rect key="frame" x="220" y="720" width="90" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="OBY-qp-BjI"/>
+                                    <constraint firstAttribute="width" constant="90" id="av8-LI-zJI"/>
+                                </constraints>
+                                <state key="normal" image="保存分享"/>
                                 <connections>
                                     <action selector="Share:" destination="Nq7-XB-LE2" eventType="touchUpInside" id="9cN-sG-ScE"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-2f-K7B">
-                                <rect key="frame" x="72" y="739" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="已保存"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-2f-K7B">
+                                <rect key="frame" x="75" y="729" width="69" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="RLX-W5-944"/>
+                                    <constraint firstAttribute="width" constant="69" id="RaL-qf-cJH"/>
+                                </constraints>
+                                <state key="normal" image="保存对勾"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DzB-ck-El9" secondAttribute="bottom" constant="23" id="4ch-aL-6CQ"/>
                             <constraint firstItem="1yY-9B-xka" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" constant="22" id="4wC-8b-fi7"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="trailing" secondItem="8a7-Jm-m8U" secondAttribute="trailing" id="5kX-el-FT1"/>
+                            <constraint firstItem="2f2-2f-K7B" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" constant="75" id="BCC-TK-f76"/>
+                            <constraint firstItem="fuJ-UB-Tz4" firstAttribute="trailing" secondItem="8a7-Jm-m8U" secondAttribute="trailing" id="DJU-5Z-OpW"/>
+                            <constraint firstAttribute="bottom" secondItem="fuJ-UB-Tz4" secondAttribute="bottom" id="Ey9-OT-cZg"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="top" secondItem="usZ-lA-MTS" secondAttribute="top" id="MFw-eN-IxG"/>
+                            <constraint firstItem="CJO-Dl-oYM" firstAttribute="centerX" secondItem="usZ-lA-MTS" secondAttribute="centerX" id="OkF-5F-VJ7"/>
+                            <constraint firstAttribute="bottom" secondItem="OAP-fa-NrW" secondAttribute="bottom" constant="23" id="Q9c-ZX-8d6"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" id="WcF-Af-HEO"/>
                             <constraint firstItem="1yY-9B-xka" firstAttribute="top" secondItem="usZ-lA-MTS" secondAttribute="topMargin" constant="8" id="Wod-Xn-kZ9"/>
+                            <constraint firstItem="8a7-Jm-m8U" firstAttribute="trailing" secondItem="DzB-ck-El9" secondAttribute="trailing" constant="65" id="YJQ-oD-irk"/>
+                            <constraint firstItem="fuJ-UB-Tz4" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" id="bR0-EM-Qe6"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="trailing" secondItem="8a7-Jm-m8U" secondAttribute="trailing" id="hmm-AJ-AvY"/>
+                            <constraint firstItem="CJO-Dl-oYM" firstAttribute="top" secondItem="usZ-lA-MTS" secondAttribute="top" id="jRx-q0-80X"/>
+                            <constraint firstItem="20X-g7-d07" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" constant="75" id="lQh-tF-PpZ"/>
+                            <constraint firstAttribute="bottom" secondItem="2f2-2f-K7B" secondAttribute="bottom" constant="31" id="laP-9i-tPt"/>
+                            <constraint firstItem="8a7-Jm-m8U" firstAttribute="trailing" secondItem="OAP-fa-NrW" secondAttribute="trailing" constant="65" id="oxM-Si-ica"/>
+                            <constraint firstItem="CJO-Dl-oYM" firstAttribute="trailing" secondItem="8a7-Jm-m8U" secondAttribute="trailing" id="pO8-Lb-T1u"/>
+                            <constraint firstItem="CJO-Dl-oYM" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" id="sae-ey-bOm"/>
+                            <constraint firstItem="20X-g7-d07" firstAttribute="bottom" secondItem="8a7-Jm-m8U" secondAttribute="bottom" id="soQ-IG-Wl7"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="top" secondItem="usZ-lA-MTS" secondAttribute="top" id="tF4-X7-6ea"/>
+                            <constraint firstItem="X4F-6m-Vqb" firstAttribute="centerX" secondItem="usZ-lA-MTS" secondAttribute="centerX" id="vji-wf-qYh"/>
+                            <constraint firstItem="fuJ-UB-Tz4" firstAttribute="centerX" secondItem="usZ-lA-MTS" secondAttribute="centerX" id="xiW-4r-h6V"/>
                             <constraint firstItem="CJO-Dl-oYM" firstAttribute="leading" secondItem="8a7-Jm-m8U" secondAttribute="leading" id="zM4-sD-Dju"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8a7-Jm-m8U"/>
@@ -174,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVA-hy-NYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="360.59113300492612"/>
+            <point key="canvasLocation" x="981.60000000000002" y="517.98029556650249"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Z48-rV-Pd5">
@@ -184,9 +215,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-3O-CU9">
-                                <rect key="frame" x="171.66666666666666" y="391" width="31" height="30"/>
-                                <state key="normal" title="相机"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-3O-CU9">
+                                <rect key="frame" x="145.33333333333334" y="364" width="84" height="84"/>
+                                <state key="normal" image="相机"/>
                                 <connections>
                                     <action selector="Camera:" destination="ynn-e7-bYr" eventType="touchUpInside" id="Vfd-Po-Raa"/>
                                 </connections>
@@ -198,20 +229,23 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-tA-tI9">
-                                <rect key="frame" x="16" y="54" width="37" height="34"/>
-                                <state key="normal" title="相册"/>
+                                <rect key="frame" x="19" y="52" width="21" height="22"/>
+                                <state key="normal" image="相册"/>
                                 <connections>
                                     <action selector="Album:" destination="ynn-e7-bYr" eventType="touchUpInside" id="BPz-3p-tWc"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="搞怪" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar背景" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
                                 <rect key="frame" x="16" y="189" width="343" height="434"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-n2-3hd">
-                                <rect key="frame" x="323" y="54" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="完成">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-n2-3hd">
+                                <rect key="frame" x="330" y="52" width="29" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="Ah6-xq-MVe"/>
+                                    <constraint firstAttribute="height" constant="20" id="Dgh-v4-j3s"/>
+                                </constraints>
+                                <state key="normal" image="白色对号">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -221,15 +255,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EBR-tA-tI9" firstAttribute="top" secondItem="fRA-Ze-Jdm" secondAttribute="topMargin" constant="10" id="0kg-i1-bWq"/>
+                            <constraint firstItem="k1d-Px-f1U" firstAttribute="trailing" secondItem="cQ4-n2-3hd" secondAttribute="trailing" constant="16" id="1jb-nL-fFj"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="trailing" secondItem="k1d-Px-f1U" secondAttribute="trailing" id="2sF-AP-724"/>
+                            <constraint firstItem="cQ4-n2-3hd" firstAttribute="top" secondItem="k1d-Px-f1U" secondAttribute="top" constant="8" id="Bct-By-rng"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="top" secondItem="fRA-Ze-Jdm" secondAttribute="top" id="E71-7i-wmR"/>
-                            <constraint firstItem="EBR-tA-tI9" firstAttribute="leading" secondItem="k1d-Px-f1U" secondAttribute="leading" constant="16" id="IIA-iu-96c"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="leading" secondItem="k1d-Px-f1U" secondAttribute="leading" id="Iy5-Q7-O7d"/>
                             <constraint firstItem="0j7-3O-CU9" firstAttribute="centerY" secondItem="fRA-Ze-Jdm" secondAttribute="centerY" id="V0j-Da-OS8"/>
+                            <constraint firstItem="EBR-tA-tI9" firstAttribute="top" secondItem="k1d-Px-f1U" secondAttribute="top" constant="8" id="V5Y-9c-HeB"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="top" secondItem="fRA-Ze-Jdm" secondAttribute="top" id="e6t-42-cXj"/>
                             <constraint firstItem="0j7-3O-CU9" firstAttribute="centerX" secondItem="fRA-Ze-Jdm" secondAttribute="centerX" id="ej5-RK-k1q"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="trailing" secondItem="k1d-Px-f1U" secondAttribute="trailing" id="pac-Yz-Kpg"/>
+                            <constraint firstItem="EBR-tA-tI9" firstAttribute="leading" secondItem="k1d-Px-f1U" secondAttribute="leading" constant="19" id="qhp-SJ-CMM"/>
                             <constraint firstItem="Ok6-3i-7ex" firstAttribute="leading" secondItem="k1d-Px-f1U" secondAttribute="leading" id="qvf-QC-Tyz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k1d-Px-f1U"/>
@@ -242,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m2-ql-MH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.79999999999995" y="-401.23152709359607"/>
+            <point key="canvasLocation" x="981.60000000000002" y="-423.39901477832512"/>
         </scene>
     </scenes>
     <resources>
@@ -250,10 +286,17 @@
         <image name="bar背景" width="375" height="86"/>
         <image name="iPhone X – 1.png" width="375" height="812"/>
         <image name="voicebutton" width="35" height="35"/>
+        <image name="保存分享" width="44" height="44"/>
+        <image name="保存对勾" width="40" height="33"/>
+        <image name="已保存" width="35" height="35"/>
+        <image name="已经返回" width="24" height="30"/>
         <image name="搞怪" width="123" height="62"/>
+        <image name="白色对号" width="40" height="32"/>
+        <image name="相册" width="21" height="16"/>
+        <image name="相机" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Gj-Ir-InG"/>
+        <segue reference="lgg-BS-AXD"/>
         <segue reference="dnn-wu-6Jx"/>
     </inferredMetricsTieBreakers>
 </document>

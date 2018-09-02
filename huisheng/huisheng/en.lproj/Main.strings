@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "相机"; ObjectID = "0j7-3O-CU9"; */
+"0j7-3O-CU9.normalTitle" = "相机";
+
+/* Class = "UIButton"; normalTitle = "返回"; ObjectID = "20X-g7-d07"; */
+"20X-g7-d07.normalTitle" = "返回";
+
+/* Class = "UIButton"; normalTitle = "已保存"; ObjectID = "2f2-2f-K7B"; */
+"2f2-2f-K7B.normalTitle" = "已保存";
+
+/* Class = "UIButton"; normalTitle = "保存"; ObjectID = "DzB-ck-El9"; */
+"DzB-ck-El9.normalTitle" = "保存";
+
+/* Class = "UIButton"; normalTitle = "相册"; ObjectID = "EBR-tA-tI9"; */
+"EBR-tA-tI9.normalTitle" = "相册";
+
+/* Class = "UIViewController"; title = "SaveImage"; ObjectID = "Nq7-XB-LE2"; */
+"Nq7-XB-LE2.title" = "SaveImage";
+
+/* Class = "UIButton"; normalTitle = "分享"; ObjectID = "OAP-fa-NrW"; */
+"OAP-fa-NrW.normalTitle" = "分享";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "cQ4-n2-3hd"; */
+"cQ4-n2-3hd.normalTitle" = "完成";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "pzd-Ap-tlD"; */
+"pzd-Ap-tlD.normalTitle" = "完成";
+
+/* Class = "UIViewController"; title = "first"; ObjectID = "ur6-JC-W74"; */
+"ur6-JC-W74.title" = "first";

@@ -27,14 +27,17 @@ class SaveImageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+   
 
         // Do any additional setup after loading the view.
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         backButton.isHidden = false
         SaveButton.isHidden = false
         OverSaveButton.isHidden = true
         ShareButton.isHidden = true
+       
     }
 
     override func didReceiveMemoryWarning() {

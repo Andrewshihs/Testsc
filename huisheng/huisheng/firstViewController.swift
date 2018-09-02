@@ -21,9 +21,21 @@ class firstViewController: UIViewController {
         GGCamera.isHidden = true
         CircleAnimate()
     }
+    @IBAction func ImageFinsh(_ sender: UIButton) {
+        print("测试")
+    }
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //if(segue.identifier == "save"){
+            //let SaveImage=segue.destination as? SaveImageViewController
+         //   SaveImage?.HuiShengImage.image = HuiTu.image
+      //  }
+   // }
+    
+ 
     
     @IBAction func OverButton(_ sender: UIButton) {
         GGCamera.isHidden = false
+        HuiTu.image = UIImage(named:"logo.png")
         HuiTu.isHidden = false
          ImageFinsh.isHidden = false
     }
@@ -67,7 +79,6 @@ class firstViewController: UIViewController {
         ImageFinsh.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
-     //   super.viewWillDisappear(<#T##animated: Bool##Bool#>)
         HuiTu.isHidden = true
     }
     override func didReceiveMemoryWarning() {
