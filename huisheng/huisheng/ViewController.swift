@@ -22,6 +22,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             self.imagePicker = UIImagePickerController()
         }
         self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = true
         self.imagePicker.sourceType = .photoLibrary
         self.present(self.imagePicker,animated: true,completion:nil)
         
@@ -35,6 +36,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             }
             
             self.imagePicker.delegate = self
+            self.imagePicker.allowsEditing = true
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker,animated: true,completion: nil)
         }else{
@@ -61,7 +63,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     internal func imagePickerController(_ picker: UIImagePickerController,
                                        didFinishPickingMediaWithInfo info: [String : Any]) {
         let originalImage = info[UIImagePickerControllerEditedImage] as? UIImage
-        self.imagePicker.allowsEditing = true
+        
         self.CameraImage.image = originalImage
         self.CameraImage.contentMode = .scaleAspectFill
         self.imagePicker.delegate = nil
