@@ -34,10 +34,9 @@ class firstViewController: UIViewController {
  
     
     @IBAction func OverButton(_ sender: UIButton) {
-        GGCamera.isHidden = false
         HuiTu.image = UIImage(named:"logo.png")
         HuiTu.isHidden = false
-         ImageFinsh.isHidden = false
+        ImageFinsh.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()

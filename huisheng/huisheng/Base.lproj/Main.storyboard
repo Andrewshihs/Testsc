@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone X – 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
-                                <rect key="frame" x="16" y="116" width="343" height="577"/>
+                                <rect key="frame" x="16" y="160" width="343" height="533"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
                                 <rect key="frame" x="170" y="737" width="35" height="35"/>
@@ -57,9 +57,9 @@
                                     <action selector="VoiceButton:" destination="ur6-JC-W74" eventType="touchDown" id="aoE-VK-MW9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-Ap-tlD">
-                                <rect key="frame" x="328" y="62" width="31" height="30"/>
-                                <state key="normal" title="完成"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-Ap-tlD">
+                                <rect key="frame" x="329" y="106" width="30" height="24"/>
+                                <state key="normal" image="对号"/>
                                 <connections>
                                     <action selector="ImageFinsh:" destination="ur6-JC-W74" eventType="touchUpInside" id="J0z-US-swR"/>
                                     <action selector="ImageFinsh:" destination="w0Y-bv-H98" eventType="touchUpInside" id="Ql1-U1-x9v"/>
@@ -109,7 +109,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-9B-xka">
-                                <rect key="frame" x="22" y="52" width="14" height="22"/>
+                                <rect key="frame" x="22" y="96" width="14" height="22"/>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <segue destination="ur6-JC-W74" kind="push" id="hce-0F-Im4"/>
@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-3O-CU9">
-                                <rect key="frame" x="145.33333333333334" y="364" width="84" height="84"/>
+                                <rect key="frame" x="145" y="364" width="84" height="84"/>
                                 <state key="normal" image="相机"/>
                                 <connections>
                                     <action selector="Camera:" destination="ynn-e7-bYr" eventType="touchUpInside" id="Vfd-Po-Raa"/>
@@ -237,7 +237,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-tA-tI9">
-                                <rect key="frame" x="19" y="52" width="21" height="22"/>
+                                <rect key="frame" x="19" y="96" width="21" height="22"/>
                                 <state key="normal" image="相册"/>
                                 <connections>
                                     <action selector="Album:" destination="ynn-e7-bYr" eventType="touchUpInside" id="BPz-3p-tWc"/>
@@ -248,7 +248,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-n2-3hd">
-                                <rect key="frame" x="330" y="52" width="29" height="20"/>
+                                <rect key="frame" x="330" y="96" width="29" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="29" id="Ah6-xq-MVe"/>
                                     <constraint firstAttribute="height" constant="20" id="Dgh-v4-j3s"/>
@@ -296,6 +296,7 @@
         <image name="voicebutton" width="35" height="35"/>
         <image name="保存分享" width="44" height="44"/>
         <image name="保存对勾" width="40" height="33"/>
+        <image name="对号" width="30" height="24"/>
         <image name="已保存" width="35" height="35"/>
         <image name="已经返回" width="24" height="30"/>
         <image name="搞怪" width="123" height="62"/>
@@ -304,7 +305,7 @@
         <image name="相机" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lgg-BS-AXD"/>
-        <segue reference="dnn-wu-6Jx"/>
+        <segue reference="3Gj-Ir-InG"/>
+        <segue reference="Sj2-iG-DZu"/>
     </inferredMetricsTieBreakers>
 </document>
