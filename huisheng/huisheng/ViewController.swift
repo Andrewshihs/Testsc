@@ -40,7 +40,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker,animated: true,completion: nil)
         }else{
-            print("相机不可用")
+            let controller = UIAlertController(title:"系统错误",message:"\n相机无法启动",preferredStyle: .alert)
+            let OKAction = UIAlertAction(title:"我知道了", style: .default,handler: nil)
+            controller.addAction(OKAction)
+            self.present(controller,animated: true,completion: nil)
+            //警告视窗
         }
        
     }
