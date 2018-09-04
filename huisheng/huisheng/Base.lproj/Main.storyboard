@@ -294,13 +294,13 @@
         <image name="bar背景" width="375" height="86"/>
         <image name="iPhone X – 1.png" width="375" height="812"/>
         <image name="voicebutton" width="35" height="35"/>
-        <image name="保存分享" width="44" height="44"/>
-        <image name="保存对勾" width="40" height="33"/>
+        <image name="保存分享" width="43" height="43"/>
+        <image name="保存对勾" width="39" height="32"/>
         <image name="对号" width="30" height="24"/>
-        <image name="已保存" width="35" height="35"/>
+        <image name="已保存" width="34" height="34"/>
         <image name="已经返回" width="24" height="30"/>
         <image name="搞怪" width="123" height="62"/>
-        <image name="白色对号" width="40" height="32"/>
+        <image name="白色对号" width="129" height="129"/>
         <image name="相册" width="21" height="16"/>
         <image name="相机" width="84" height="84"/>
     </resources>
