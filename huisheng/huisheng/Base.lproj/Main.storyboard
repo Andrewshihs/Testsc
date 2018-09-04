@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone X – 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
-                                <rect key="frame" x="16" y="160" width="343" height="533"/>
+                                <rect key="frame" x="16" y="116" width="343" height="577"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
                                 <rect key="frame" x="170" y="737" width="35" height="35"/>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzd-Ap-tlD">
-                                <rect key="frame" x="329" y="106" width="30" height="24"/>
+                                <rect key="frame" x="329" y="62" width="30" height="24"/>
                                 <state key="normal" image="对号"/>
                                 <connections>
                                     <action selector="ImageFinsh:" destination="ur6-JC-W74" eventType="touchUpInside" id="J0z-US-swR"/>
@@ -109,13 +109,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yY-9B-xka">
-                                <rect key="frame" x="22" y="96" width="14" height="22"/>
+                                <rect key="frame" x="22" y="52" width="14" height="22"/>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <segue destination="ur6-JC-W74" kind="push" id="hce-0F-Im4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voicebutton" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
                                 <rect key="frame" x="22" y="243" width="331" height="245"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="245" id="nzO-e1-s1R"/>
@@ -237,18 +237,18 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-tA-tI9">
-                                <rect key="frame" x="19" y="96" width="21" height="22"/>
+                                <rect key="frame" x="19" y="52" width="21" height="22"/>
                                 <state key="normal" image="相册"/>
                                 <connections>
                                     <action selector="Album:" destination="ynn-e7-bYr" eventType="touchUpInside" id="BPz-3p-tWc"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar背景" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="搞怪" translatesAutoresizingMaskIntoConstraints="NO" id="tod-o2-zzY">
                                 <rect key="frame" x="16" y="189" width="343" height="434"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ4-n2-3hd">
-                                <rect key="frame" x="330" y="96" width="29" height="20"/>
+                                <rect key="frame" x="330" y="52" width="29" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="29" id="Ah6-xq-MVe"/>
                                     <constraint firstAttribute="height" constant="20" id="Dgh-v4-j3s"/>
@@ -305,7 +305,7 @@
         <image name="相机" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Gj-Ir-InG"/>
-        <segue reference="Sj2-iG-DZu"/>
+        <segue reference="lgg-BS-AXD"/>
+        <segue reference="hce-0F-Im4"/>
     </inferredMetricsTieBreakers>
 </document>

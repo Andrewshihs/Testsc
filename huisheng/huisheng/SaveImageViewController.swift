@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SaveImageViewController: UIViewController {
+class SaveImageViewController: UIViewController, firstPassDelegate {
 
     @IBOutlet weak var HuiShengImage: UIImageView!
     @IBOutlet weak var backButton: UIButton!
@@ -27,7 +27,10 @@ class SaveImageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        let firstImage = firstViewController()
+        firstImage.delegate = self //as firstPassDelegate)
+        HuiShengImage.isHidden = false
+        //PassImage(image: <#T##UIImage#>)
 
         // Do any additional setup after loading the view.
     }
@@ -55,5 +58,8 @@ class SaveImageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func PassImage(image:UIImage) {
+        HuiShengImage.image = image
+    }
 
 }

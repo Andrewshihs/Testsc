@@ -8,21 +8,29 @@
 
 import UIKit
 
+protocol   firstPassDelegate {
+    func PassImage(image:UIImage)
+}
+
 class firstViewController: UIViewController {
     
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
     let screenh = UIScreen.main.bounds.size.height
     let screenw = UIScreen.main.bounds.size.width
+    var delegate: firstPassDelegate?
     @IBOutlet weak var HuiTu: UIImageView!
     @IBOutlet weak var GGCamera: UIButton!
     @IBOutlet weak var ImageFinsh: UIButton!
     @IBAction func VoiceButton(_ sender: UIButton) {
         GGCamera.isHidden = true
+        HuiTu.image = #imageLiteral(resourceName: "logo.png")
         CircleAnimate()
+        
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
         print("测试")
+        self.delegate?.PassImage(image: HuiTu.image!)
     }
     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //if(segue.identifier == "save"){
