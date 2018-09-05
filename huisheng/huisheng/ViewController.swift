@@ -16,7 +16,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var CameraImage: UIImageView!
     var imagePicker: UIImagePickerController!
     @IBOutlet weak var takePictureButton: UIButton!
-    
     @IBAction func Album(_ sender: UIButton) {
         if self.imagePicker == nil {
             self.imagePicker = UIImagePickerController()

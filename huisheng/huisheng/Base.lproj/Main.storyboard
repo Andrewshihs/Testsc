@@ -42,7 +42,7 @@
                                     <segue destination="ynn-e7-bYr" kind="push" id="wn3-Tf-80X"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone X – 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-PL-vE0">
                                 <rect key="frame" x="16" y="116" width="343" height="577"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-9O-hGy">
@@ -115,7 +115,7 @@
                                     <segue destination="ur6-JC-W74" kind="push" id="hce-0F-Im4"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voicebutton" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4F-6m-Vqb">
                                 <rect key="frame" x="22" y="243" width="331" height="245"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="245" id="nzO-e1-s1R"/>
@@ -292,7 +292,6 @@
     <resources>
         <image name="back" width="14" height="22"/>
         <image name="bar背景" width="375" height="86"/>
-        <image name="iPhone X – 1.png" width="375" height="812"/>
         <image name="voicebutton" width="35" height="35"/>
         <image name="保存分享" width="43" height="43"/>
         <image name="保存对勾" width="39" height="32"/>
@@ -305,7 +304,7 @@
         <image name="相机" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lgg-BS-AXD"/>
-        <segue reference="hce-0F-Im4"/>
+        <segue reference="3Gj-Ir-InG"/>
+        <segue reference="dnn-wu-6Jx"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,15 +8,19 @@
 
 import UIKit
 
-class SaveImageViewController: UIViewController, firstPassDelegate {
-
+class SaveImageViewController: UIViewController {
+    
     @IBOutlet weak var HuiShengImage: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var OverSaveButton: UIButton!
     @IBOutlet weak var ShareButton: UIButton!
     @IBOutlet weak var SaveButton: UIButton!
-    
+    var ss=2
     @IBAction func Share(_ sender: UIButton) {
+        // 测试分享
+        
+        
+       
         
     }
     @IBAction func SaveButton(_ sender: UIButton) {
@@ -27,12 +31,7 @@ class SaveImageViewController: UIViewController, firstPassDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstImage = firstViewController()
-        firstImage.delegate = self //as firstPassDelegate)
-        HuiShengImage.isHidden = false
-        //PassImage(image: <#T##UIImage#>)
-
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,13 +52,13 @@ class SaveImageViewController: UIViewController, firstPassDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-    func PassImage(image:UIImage) {
-        HuiShengImage.image = image
-    }
+    
 
 }

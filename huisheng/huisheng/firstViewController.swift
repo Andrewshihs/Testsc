@@ -8,47 +8,35 @@
 
 import UIKit
 
-protocol   firstPassDelegate {
-    func PassImage(image:UIImage)
-}
-
-class firstViewController: UIViewController {
+class firstViewController: UIViewController{
     
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
     let screenh = UIScreen.main.bounds.size.height
     let screenw = UIScreen.main.bounds.size.width
-    var delegate: firstPassDelegate?
     @IBOutlet weak var HuiTu: UIImageView!
     @IBOutlet weak var GGCamera: UIButton!
     @IBOutlet weak var ImageFinsh: UIButton!
+    
     @IBAction func VoiceButton(_ sender: UIButton) {
         GGCamera.isHidden = true
-        HuiTu.image = #imageLiteral(resourceName: "logo.png")
         CircleAnimate()
         
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
         print("测试")
-        self.delegate?.PassImage(image: HuiTu.image!)
+        
     }
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if(segue.identifier == "save"){
-            //let SaveImage=segue.destination as? SaveImageViewController
-         //   SaveImage?.HuiShengImage.image = HuiTu.image
-      //  }
-   // }
     
  
     
     @IBAction func OverButton(_ sender: UIButton) {
-        HuiTu.image = UIImage(named:"logo.png")
+        HuiTu.image =  #imageLiteral(resourceName: "iPhone X – 1.png")
         HuiTu.isHidden = false
         ImageFinsh.isHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-                // Do any additional setup after loading the view.
     }
     
     //圆形进度条动画
@@ -79,8 +67,6 @@ class firstViewController: UIViewController {
         }
     }
     
-    
-
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         ImageFinsh.isHidden = true
@@ -92,16 +78,14 @@ class firstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       let controller = segue.destination as! SaveImageViewController
+      // controller.HuiShengImage.image = self.HuiTu.image
+        //controller.ss = sr
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    }*/
+    
 
 }
