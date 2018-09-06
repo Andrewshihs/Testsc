@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		490D6FB1213CCCCD0036942D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D6FB0213CCCCD0036942D /* AudioToolbox.framework */; };
 		49211B852140F72D00ADA0F5 /* fatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49211B842140F72D00ADA0F5 /* fatherViewController.swift */; };
+		49293F6721413D0F000B3504 /* CoolImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49293F6621413D0F000B3504 /* CoolImage.swift */; };
 		BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37C21363A7500E15B7F /* AppDelegate.swift */; };
 		BF73F37F21363A7500E15B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37E21363A7500E15B7F /* ViewController.swift */; };
 		BF73F38221363A7500E15B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF73F38021363A7500E15B7F /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		490D6FB0213CCCCD0036942D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		49211B842140F72D00ADA0F5 /* fatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fatherViewController.swift; sourceTree = "<group>"; };
+		49293F6621413D0F000B3504 /* CoolImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolImage.swift; sourceTree = "<group>"; };
+		49293F6921413D97000B3504 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF73F37921363A7500E15B7F /* huisheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huisheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF73F37C21363A7500E15B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF73F37E21363A7500E15B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,12 +52,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49293F6821413D58000B3504 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				49211B842140F72D00ADA0F5 /* fatherViewController.swift */,
+				BFAD50662138350000A4137E /* SaveImageViewController.swift */,
+				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
+				BF73F37E21363A7500E15B7F /* ViewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
 		BF73F37021363A7500E15B7F = {
 			isa = PBXGroup;
 			children = (
-				BF73F37B21363A7500E15B7F /* huisheng */,
-				BF73F37A21363A7500E15B7F /* Products */,
+				49293F6921413D97000B3504 /* README.md */,
 				BFAD505D213827F800A4137E /* Frameworks */,
+				BF73F37A21363A7500E15B7F /* Products */,
+				BF73F37B21363A7500E15B7F /* huisheng */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,12 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				BFAD505C213827F800A4137E /* huisheng.entitlements */,
+				49293F6821413D58000B3504 /* VIew */,
 				BF73F37C21363A7500E15B7F /* AppDelegate.swift */,
-				BFAD50662138350000A4137E /* SaveImageViewController.swift */,
-				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
-				BF73F37E21363A7500E15B7F /* ViewController.swift */,
+				49293F6621413D0F000B3504 /* CoolImage.swift */,
 				BF73F38021363A7500E15B7F /* Main.storyboard */,
-				49211B842140F72D00ADA0F5 /* fatherViewController.swift */,
 				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
 				BF95699F213A35F900C6A427 /* logo.png */,
@@ -175,6 +188,7 @@
 				49211B852140F72D00ADA0F5 /* fatherViewController.swift in Sources */,
 				BFAD50672138350000A4137E /* SaveImageViewController.swift in Sources */,
 				BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */,
+				49293F6721413D0F000B3504 /* CoolImage.swift in Sources */,
 				BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
