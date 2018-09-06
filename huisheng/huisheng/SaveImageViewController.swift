@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SaveImageViewController: UIViewController {
+class SaveImageViewController: fatherViewController {
     
     var text1 = "iPhone X-1.png"
     @IBOutlet weak var HuiShengImage: UIImageView!
@@ -32,7 +32,7 @@ class SaveImageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        HuiShengImage.image = UIImage(named: "\(text1)")
+        HuiShengImage.image = fatherViewController.TempImage
         
     }
     

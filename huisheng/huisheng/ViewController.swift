@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
 
     @IBOutlet weak var CameraImage: UIImageView!

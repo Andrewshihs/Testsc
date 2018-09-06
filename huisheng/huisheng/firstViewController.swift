@@ -8,9 +8,9 @@
 
 import UIKit
 
-class firstViewController: UIViewController{
+class firstViewController: fatherViewController{
     
-    var text = "logo.png"
+    var text = "2.png"
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
     let screenh = UIScreen.main.bounds.size.height
@@ -25,8 +25,7 @@ class firstViewController: UIViewController{
         
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
-        print("测试")
-        
+         fatherViewController.TempImage = HuiTu.image!
     }
     
  
@@ -35,6 +34,7 @@ class firstViewController: UIViewController{
         HuiTu.image=UIImage(named: "\(text)")
         HuiTu.isHidden = false
         ImageFinsh.isHidden = false
+        
         
     }
     override func viewDidLoad() {
@@ -80,14 +80,6 @@ class firstViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       let controller = segue.destination as! SaveImageViewController
-        controller.text1 = self.text
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
-
 }
