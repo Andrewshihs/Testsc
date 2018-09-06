@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
-    
+
     @IBOutlet weak var CameraImage: UIImageView!
     var imagePicker: UIImagePickerController!
     @IBOutlet weak var takePictureButton: UIButton!

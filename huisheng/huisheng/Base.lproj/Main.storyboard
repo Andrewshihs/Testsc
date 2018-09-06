@@ -63,7 +63,7 @@
                                 <connections>
                                     <action selector="ImageFinsh:" destination="ur6-JC-W74" eventType="touchUpInside" id="J0z-US-swR"/>
                                     <action selector="ImageFinsh:" destination="w0Y-bv-H98" eventType="touchUpInside" id="Ql1-U1-x9v"/>
-                                    <segue destination="Nq7-XB-LE2" kind="push" identifier="save" id="3Gj-Ir-InG"/>
+                                    <segue destination="Nq7-XB-LE2" kind="push" identifier="ShowDetailView" id="3Gj-Ir-InG"/>
                                 </connections>
                             </button>
                         </subviews>

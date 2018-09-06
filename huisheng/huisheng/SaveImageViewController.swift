@@ -10,12 +10,13 @@ import UIKit
 
 class SaveImageViewController: UIViewController {
     
+    var text1 = "iPhone X-1.png"
     @IBOutlet weak var HuiShengImage: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var OverSaveButton: UIButton!
     @IBOutlet weak var ShareButton: UIButton!
     @IBOutlet weak var SaveButton: UIButton!
-    var ss=2
+    var TestView: UIImageView!
     @IBAction func Share(_ sender: UIButton) {
         // 测试分享
         
@@ -31,6 +32,7 @@ class SaveImageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        HuiShengImage.image = UIImage(named: "\(text1)")
         
     }
     

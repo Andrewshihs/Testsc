@@ -10,6 +10,7 @@ import UIKit
 
 class firstViewController: UIViewController{
     
+    var text = "logo.png"
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
     let screenh = UIScreen.main.bounds.size.height
@@ -31,9 +32,10 @@ class firstViewController: UIViewController{
  
     
     @IBAction func OverButton(_ sender: UIButton) {
-        HuiTu.image =  #imageLiteral(resourceName: "iPhone X – 1.png")
+        HuiTu.image=UIImage(named: "\(text)")
         HuiTu.isHidden = false
         ImageFinsh.isHidden = false
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,14 +80,14 @@ class firstViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let controller = segue.destination as! SaveImageViewController
-      // controller.HuiShengImage.image = self.HuiTu.image
-        //controller.ss = sr
+        controller.text1 = self.text
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }*/
+    }
     
 
 }
