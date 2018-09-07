@@ -24,7 +24,7 @@ class firstViewController: fatherViewController{
         CircleAnimate()
         HuiTu.image = fatherViewController.TempImage
         HuiTu.isHidden = false
-        CoolImage.cool(value: 2)
+        CoolImage.cool(value: 30)
         
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
