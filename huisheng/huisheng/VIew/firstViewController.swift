@@ -10,7 +10,7 @@ import UIKit
 
 class firstViewController: fatherViewController{
     
-    var text = "2.png"
+    var text = "logo.png"
     var timer :Timer!
     var shapeLayer:CAShapeLayer!
     let screenh = UIScreen.main.bounds.size.height
@@ -22,6 +22,9 @@ class firstViewController: fatherViewController{
     @IBAction func VoiceButton(_ sender: UIButton) {
         GGCamera.isHidden = true
         CircleAnimate()
+        HuiTu.image = fatherViewController.TempImage
+        HuiTu.isHidden = false
+        CoolImage.cool(value: 2)
         
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
@@ -34,6 +37,7 @@ class firstViewController: fatherViewController{
         HuiTu.image=UIImage(named: "\(text)")
         HuiTu.isHidden = false
         ImageFinsh.isHidden = false
+        HuiTu.image = fatherViewController.TempImage
         
         
     }
