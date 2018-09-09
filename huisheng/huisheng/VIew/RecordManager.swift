@@ -12,7 +12,7 @@ import AVFoundation
 class RecordManager {
     
     var recorder: AVAudioRecorder?
-   
+    var player: AVAudioPlayer?
     let file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first?.appending("/record.wav")
     
     //开始录音
@@ -34,7 +34,7 @@ class RecordManager {
         let recordSetting: [String: Any] = [AVSampleRateKey: NSNumber(value: 16000),//采样率
             AVFormatIDKey: NSNumber(value: kAudioFormatLinearPCM),//音频格式
             AVLinearPCMBitDepthKey: NSNumber(value: 16),//采样位数
-            AVNumberOfChannelsKey: NSNumber(value: 1),//通道数
+            AVNumberOfChannelsKey: NSNumber(value: 2),//通道数
             AVEncoderAudioQualityKey: NSNumber(value: AVAudioQuality.min.rawValue)//录音质量
         ];
         //开始录音
@@ -43,6 +43,7 @@ class RecordManager {
             recorder = try AVAudioRecorder(url: url, settings: recordSetting)
             recorder!.prepareToRecord()
             recorder!.record()
+           // recorder!.isMeteringEnabled=true
             print("record start")
         } catch let err {
             print("record ERROr:\(err.localizedDescription)")
@@ -63,13 +64,21 @@ class RecordManager {
             print("not init")
         }
     }
+    func play() {
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: file_path!))
+            print("歌曲长度：\(player!.duration)")
+            player!.play()
+        } catch let err {
+            print("播放失败:\(err.localizedDescription)")
+        }
+    }
+    
     func audioPowerChange(){
-        print("测试")
-        recorder?.updateMeters()
-        print(" 获取后")
-        var power = recorder?.averagePower(forChannel: 1)
-        var VoicePower = (1.0/160.0)*(power!+160.0)
-        print("声音变化值")
+        recorder!.isMeteringEnabled = true
+        recorder!.updateMeters()
+        let power = recorder?.peakPower(forChannel: 2)
+        let VoicePower = (1.0/160.0)*(power!+160.0)
         print(VoicePower)
     }
     

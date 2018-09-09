@@ -282,6 +282,7 @@
                     <navigationItem key="navigationItem" id="ZCg-J4-AWQ"/>
                     <connections>
                         <outlet property="CameraImage" destination="tod-o2-zzY" id="gUw-D3-fXG"/>
+                        <outlet property="VoiceFinsh" destination="cQ4-n2-3hd" id="ixX-lQ-kXK"/>
                         <outlet property="takePictureButton" destination="0j7-3O-CU9" id="1hH-mu-vNX"/>
                     </connections>
                 </viewController>

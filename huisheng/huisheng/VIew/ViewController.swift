@@ -14,11 +14,14 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
     var timer :Timer!
     let recoder_manager = RecordManager()
     
+    @IBOutlet weak var VoiceFinsh: UIButton!
     @IBOutlet weak var CameraImage: UIImageView!  //搞怪相机
     @IBOutlet weak var takePictureButton: UIButton! //从相机处获取
     var imagePicker: UIImagePickerController!
     @IBAction func Voicefinsh(_ sender: UIButton) { //绘图完成Button
+        timer.invalidate()
         recoder_manager.stopRecord()
+        recoder_manager.play()
         print("结束录音")
         fatherViewController.TempImage = CameraImage.image!
     }
@@ -54,6 +57,7 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        VoiceFinsh.isHidden = true
         flag = 0
     }
    
@@ -63,15 +67,18 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if(flag == 1){
+            VoiceFinsh.isHidden = false
             recoder_manager.beginRecord()
-            let queue = DispatchQueue.global(qos: .default)
-            queue.async {
-                self.timer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:Selector("recoder_manager.audioPowerChange()"), userInfo: nil, repeats: true)
+           // let queue = DispatchQueue.global(qos: .default)
+          //  queue.async {
+                //self.timer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:Selector("recoder_manager.audioPowerChange"), userInfo: nil, repeats: true)
+                self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (timer) in
+                    self.recoder_manager.audioPowerChange()
+            })
+                
                 print("监听开始")
-               // self.recoder_manager.audioPowerChange()
-            }
-          //  self.timer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:Selector("recoder_manager.audioPowerChange()"), userInfo: nil, repeats: true)
-        
+              // self.recoder_manager.audioPowerChange()
+            //}
         }
            // timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(recoder_manager.audioPowerChange), userInfo: nil, repeats: true)
         

@@ -23,8 +23,6 @@ class firstViewController: fatherViewController{
         GGCamera.isHidden = true
         HuiTu.image = fatherViewController.TempImage
         self.CircleAnimate()
-       // HuiTu.isHidden = false
-        
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
          fatherViewController.TempImage = HuiTu.image!
@@ -33,7 +31,6 @@ class firstViewController: fatherViewController{
  
     
     @IBAction func OverButton(_ sender: UIButton) {
-        //HuiTu.image=UIImage(named: "\(text)")
         let queue = DispatchQueue.global(qos: .default)
         queue.async {
             print("do work")
@@ -42,9 +39,7 @@ class firstViewController: fatherViewController{
             self.HuiTu.isHidden = false
             print("finsh")
         }
-        
         ImageFinsh.isHidden = false
-
     }
     override func viewDidLoad() {
         super.viewDidLoad()

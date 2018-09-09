@@ -20,6 +20,7 @@ class SaveImageViewController: fatherViewController {
     @IBAction func Share(_ sender: UIButton) {
         // 测试分享
         
+        
     }
     @IBAction func SaveButton(_ sender: UIButton) {
         backButton.isHidden = true
