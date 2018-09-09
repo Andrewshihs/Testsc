@@ -10,6 +10,7 @@
 		490D6FB1213CCCCD0036942D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D6FB0213CCCCD0036942D /* AudioToolbox.framework */; };
 		49211B852140F72D00ADA0F5 /* fatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49211B842140F72D00ADA0F5 /* fatherViewController.swift */; };
 		49293F6721413D0F000B3504 /* CoolImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49293F6621413D0F000B3504 /* CoolImage.swift */; };
+		49293F6D2143BC71000B3504 /* RecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49293F6C2143BC71000B3504 /* RecordManager.swift */; };
 		BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37C21363A7500E15B7F /* AppDelegate.swift */; };
 		BF73F37F21363A7500E15B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37E21363A7500E15B7F /* ViewController.swift */; };
 		BF73F38221363A7500E15B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF73F38021363A7500E15B7F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		49211B842140F72D00ADA0F5 /* fatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fatherViewController.swift; sourceTree = "<group>"; };
 		49293F6621413D0F000B3504 /* CoolImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolImage.swift; sourceTree = "<group>"; };
 		49293F6921413D97000B3504 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		49293F6C2143BC71000B3504 /* RecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordManager.swift; sourceTree = "<group>"; };
 		BF73F37921363A7500E15B7F /* huisheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huisheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF73F37C21363A7500E15B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF73F37E21363A7500E15B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				BFAD50662138350000A4137E /* SaveImageViewController.swift */,
 				BF89F9AB2136DA440052B3EB /* firstViewController.swift */,
 				BF73F37E21363A7500E15B7F /* ViewController.swift */,
+				49293F6C2143BC71000B3504 /* RecordManager.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				BFAD50672138350000A4137E /* SaveImageViewController.swift in Sources */,
 				BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */,
 				49293F6721413D0F000B3504 /* CoolImage.swift in Sources */,
+				49293F6D2143BC71000B3504 /* RecordManager.swift in Sources */,
 				BF89F9AC2136DA440052B3EB /* firstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

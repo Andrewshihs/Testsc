@@ -257,6 +257,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="Voicefinsh:" destination="ynn-e7-bYr" eventType="touchUpInside" id="W9b-Vr-gXe"/>
                                     <segue destination="Nq7-XB-LE2" kind="push" id="lgg-BS-AXD"/>
                                 </connections>
                             </button>
@@ -304,7 +305,7 @@
         <image name="相机" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Gj-Ir-InG"/>
+        <segue reference="lgg-BS-AXD"/>
         <segue reference="Sj2-iG-DZu"/>
     </inferredMetricsTieBreakers>
 </document>
