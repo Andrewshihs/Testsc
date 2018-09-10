@@ -81,7 +81,7 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
         ]//初始化字典并添加设置参数
     }
    
-    override func viewWillAppear(_ animated: Bool) {
+    override  func viewWillAppear(_ animated: Bool) {
         
     }
     override func viewDidAppear(_ animated: Bool) {
