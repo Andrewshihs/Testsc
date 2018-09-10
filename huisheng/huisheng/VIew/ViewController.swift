@@ -103,7 +103,7 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
             let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
             queue.async {
                 print("do work")
-                CoolImage.coolFace()
+                CoolImage.coolFace(value: self.averageV)
                 self.CameraImage.image = fatherViewController.TempImage
                 //self.CameraImage.isHidden = false
                 print("finsh")
