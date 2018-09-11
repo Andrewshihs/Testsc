@@ -59,7 +59,7 @@ class firstViewController: fatherViewController{
         let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
         queue.async {
             print("do work")
-            CoolImage.cool(value: Int(self.averageV+100))
+            CoolImage.coolVo(value: Int(self.averageV+100))
             self.HuiTu.image = fatherViewController.TempImage
             self.HuiTu.isHidden = false
             print("finsh")
@@ -99,7 +99,7 @@ class firstViewController: fatherViewController{
         shapeLayer.strokeStart = 0//描线起始点
         shapeLayer.strokeEnd = 0//描线终点
         shapeLayer.fillColor = UIColor.clear.cgColor//填充色
-        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
     }
     //定时器
     @objc func animate(){
