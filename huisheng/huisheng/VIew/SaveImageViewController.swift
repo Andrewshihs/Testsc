@@ -19,8 +19,8 @@ class SaveImageViewController: fatherViewController {
     @IBOutlet weak var SaveButton: UIButton!
     var TestView: UIImageView!
     @IBAction func Share(_ sender: UIButton) {
-        // 测试分享
-     //   let activityItems = ["绘声",HuiShengImage.image!] as [Any]
+        saveT.isHidden = true
+        saveW.isHidden = true
         let textShare = "绘声"
         let imageShare = HuiShengImage.image
         let activityItems = [textShare,imageShare] as [Any]
@@ -36,6 +36,8 @@ class SaveImageViewController: fatherViewController {
         backButton.isHidden = true
         SaveButton.isHidden = true
         UIImageWriteToSavedPhotosAlbum(HuiShengImage.image!, nil, nil, nil)
+        saveT.isHidden = false
+        saveW.isHidden = false
         OverSaveButton.isHidden = false
         ShareButton.isHidden = false
         
