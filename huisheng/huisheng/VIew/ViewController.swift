@@ -100,18 +100,18 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
                 //启动定时器，定时更新录音音量
                 print("监听开始")
             }
-            let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
+           /* let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
             queue.async {
                 print("do work")
                 CoolImage.coolFace(value: self.averageV)
                 self.CameraImage.image = fatherViewController.TempImage
-                //self.CameraImage.isHidden = false
+                self.CameraImage.isHidden = false
                 print("finsh")
                 DispatchQueue.main.async(execute: {
                     self.CameraImage.isHidden = false
-                    self.CameraImage.reloadInputViews()
+                    self.CameraImage.setNeedsLayout()
                 })
-            }
+            } */
         }
     }
 
@@ -136,6 +136,10 @@ class ViewController: fatherViewController,UIImagePickerControllerDelegate, UINa
         recorder!.updateMeters() // 刷新音量数据
         averageV = recorder!.averagePower(forChannel: 0) //获取音量的平均值
         print(averageV)
+        if(averageV! > -50){
+            CoolImage.coolFace(value: self.averageV)
+            self.CameraImage.image = fatherViewController.TempImage
+        }
     }
 
 }

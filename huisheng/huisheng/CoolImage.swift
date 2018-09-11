@@ -66,7 +66,7 @@ class CoolImage {
             if feature.hasLeftEyePosition {
                 let point = CIVector(x:feature.leftEyePosition.x,y:feature.leftEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
-                coolfilter?.setValue(value+160, forKey: "inputRadius")
+                coolfilter?.setValue(value+90, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 
@@ -75,7 +75,7 @@ class CoolImage {
             if feature.hasRightEyePosition {
                 let point = CIVector(x:feature.rightEyePosition.x,y:feature.rightEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
-                coolfilter?.setValue(value+160, forKey: "inputRadius")
+                coolfilter?.setValue(value+88, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 
@@ -83,7 +83,7 @@ class CoolImage {
             if feature.hasMouthPosition {
                 var point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
-                coolfilter?.setValue(350, forKey: "inputRadius")
+                coolfilter?.setValue(250, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
             }
@@ -94,5 +94,6 @@ class CoolImage {
         let imageRef = context.createCGImage(cImage as! CIImage, from: rect)
         let image = UIImage(cgImage: imageRef as! CGImage)
         fatherViewController.TempImage = image
+        print("刷新一次")
     }
 }
