@@ -10,6 +10,7 @@
 		49211B852140F72D00ADA0F5 /* fatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49211B842140F72D00ADA0F5 /* fatherViewController.swift */; };
 		49293F6721413D0F000B3504 /* CoolImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49293F6621413D0F000B3504 /* CoolImage.swift */; };
 		49293F6F2145629A000B3504 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49293F6E2145629A000B3504 /* AudioToolbox.framework */; };
+		49293F7121478F45000B3504 /* cool in Resources */ = {isa = PBXBuildFile; fileRef = 49293F7021478F45000B3504 /* cool */; };
 		BF73F37D21363A7500E15B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37C21363A7500E15B7F /* AppDelegate.swift */; };
 		BF73F37F21363A7500E15B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F37E21363A7500E15B7F /* ViewController.swift */; };
 		BF73F38221363A7500E15B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF73F38021363A7500E15B7F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		49293F6621413D0F000B3504 /* CoolImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolImage.swift; sourceTree = "<group>"; };
 		49293F6921413D97000B3504 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49293F6E2145629A000B3504 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		49293F7021478F45000B3504 /* cool */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cool; path = icon/cool; sourceTree = SOURCE_ROOT; };
 		BF73F37921363A7500E15B7F /* huisheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huisheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF73F37C21363A7500E15B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF73F37E21363A7500E15B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				49293F6621413D0F000B3504 /* CoolImage.swift */,
 				BF73F38021363A7500E15B7F /* Main.storyboard */,
 				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
+				49293F7021478F45000B3504 /* cool */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
 				BF95699F213A35F900C6A427 /* logo.png */,
 				BF95699D213A359E00C6A427 /* iPhone X – 1.png */,
@@ -172,6 +175,7 @@
 				BF95699E213A359E00C6A427 /* iPhone X – 1.png in Resources */,
 				BF73F38721363A7500E15B7F /* LaunchScreen.storyboard in Resources */,
 				BF9569A0213A35F900C6A427 /* logo.png in Resources */,
+				49293F7121478F45000B3504 /* cool in Resources */,
 				BF73F38421363A7500E15B7F /* Assets.xcassets in Resources */,
 				BF73F38221363A7500E15B7F /* Main.storyboard in Resources */,
 			);

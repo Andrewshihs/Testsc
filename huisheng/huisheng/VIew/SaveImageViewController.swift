@@ -10,7 +10,8 @@ import UIKit
 
 class SaveImageViewController: fatherViewController {
     
-    var text1 = "iPhone X-1.png"
+    @IBOutlet weak var saveT: UIImageView!
+    @IBOutlet weak var saveW: UILabel!
     @IBOutlet weak var HuiShengImage: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var OverSaveButton: UIButton!

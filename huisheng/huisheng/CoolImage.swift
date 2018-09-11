@@ -39,7 +39,7 @@ class CoolImage {
         let coolfilter = CIFilter(name:"CIBumpDistortion")
         coolfilter?.setValue(cImage, forKey: "inputImage")
         coolfilter?.setValue(400, forKey: "inputRadius")
-      //  coolfilter?.setValue(0.6, forKey: "inputScale")
+      // coolfilter?.setValue(0.6, forKey: "inputScale")
         var point = CIVector(x:fatherViewController.TempImage.size.width/2.0,y:fatherViewController.TempImage.size.height/2.0)
         coolfilter?.setValue(point, forKey: "inputCenter")  //fliter Postion
         
