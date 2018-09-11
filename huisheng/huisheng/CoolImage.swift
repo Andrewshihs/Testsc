@@ -83,7 +83,7 @@ class CoolImage {
             if feature.hasMouthPosition {
                 var point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
-                coolfilter?.setValue(250, forKey: "inputRadius")
+                coolfilter?.setValue(165, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
             }
