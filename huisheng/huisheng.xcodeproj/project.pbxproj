@@ -66,6 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4919CC392148986A0031A0A9 /* Cool */ = {
+			isa = PBXGroup;
+			children = (
+				490BC6092147E616007AC4AF /* 2.jpeg */,
+				490BC6082147E616007AC4AF /* 0.jpeg */,
+				490BC6132147E649007AC4AF /* 6.jpeg */,
+				490BC6072147E615007AC4AF /* 3.jpeg */,
+				490BC60A2147E616007AC4AF /* 4.jpeg */,
+				490BC6052147E607007AC4AF /* 1.jpeg */,
+				490BC6112147E62A007AC4AF /* 5.jpeg */,
+			);
+			path = Cool;
+			sourceTree = "<group>";
+		};
 		49293F6821413D58000B3504 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,18 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				BFAD505C213827F800A4137E /* huisheng.entitlements */,
+				4919CC392148986A0031A0A9 /* Cool */,
 				49293F6821413D58000B3504 /* VIew */,
 				BF73F37C21363A7500E15B7F /* AppDelegate.swift */,
 				49293F6621413D0F000B3504 /* CoolImage.swift */,
 				BF73F38021363A7500E15B7F /* Main.storyboard */,
 				BF73F38521363A7500E15B7F /* LaunchScreen.storyboard */,
-				490BC6082147E616007AC4AF /* 0.jpeg */,
-				490BC6092147E616007AC4AF /* 2.jpeg */,
-				490BC6132147E649007AC4AF /* 6.jpeg */,
-				490BC6072147E615007AC4AF /* 3.jpeg */,
-				490BC6112147E62A007AC4AF /* 5.jpeg */,
-				490BC60A2147E616007AC4AF /* 4.jpeg */,
-				490BC6052147E607007AC4AF /* 1.jpeg */,
 				BF73F38321363A7500E15B7F /* Assets.xcassets */,
 				BF95699F213A35F900C6A427 /* logo.png */,
 				BF95699D213A359E00C6A427 /* iPhone X – 1.png */,

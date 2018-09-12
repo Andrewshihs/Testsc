@@ -56,7 +56,7 @@ class CoolImage {
             return
         }
         var  cImage = CIImage(cgImage: cgimg)
-        let coolfilter = CIFilter(name:"CIBumpDistortion")
+        let coolfilter = CIFilter(name:"CIBumpDistortion")  //CIBumpDistortion
         let param = [CIDetectorAccuracy: CIDetectorAccuracyHigh]  // 参数设置(精度设置)
         let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: param)  //创建识别类
         guard let faceArr = faceDetector?.features(in: cImage) else { return }  //找到识别其中的人连对象
@@ -65,10 +65,12 @@ class CoolImage {
             //左眼
             if feature.hasLeftEyePosition {
                 let point = CIVector(x:feature.leftEyePosition.x,y:feature.leftEyePosition.y)
+                print("左眼1")
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+90, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
+                print("左眼2")
                 
             }
             //右眼
@@ -81,7 +83,7 @@ class CoolImage {
                 
             }
             if feature.hasMouthPosition {
-                var point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
+                let point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(165, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
@@ -108,10 +110,13 @@ class CoolImage {
             return
         }
         let cImage = CIImage(cgImage: cgimg)
-        let guassinBlur = CIFilter(name:"CIGaussianBlur")
-        guassinBlur?.setValue(cImage, forKey: "inputImage")
-        guassinBlur?.setValue(value, forKey: "inputRadius")
-        var result = guassinBlur?.value(forKey: kCIOutputImageKey)
+        let coolOne = CIFilter(name:"CICircleSplashDistortion")
+        coolOne?.setValue(cImage, forKey: "inputImage")
+        coolOne?.setValue(value, forKey: "inputRadius")
+        let tempV = Float(value%10)
+        let point = CIVector(x: CGFloat(tempV*Float(fatherViewController.TempImage.size.width)),y: CGFloat(tempV*Float(fatherViewController.TempImage.size.height)))
+        coolOne?.setValue(point, forKey: "inputCenter")
+        var result = coolOne?.value(forKey: kCIOutputImageKey)
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
         let imageRef = context.createCGImage(result as! CIImage, from: rect)
         let image = UIImage(cgImage: imageRef as! CGImage)
