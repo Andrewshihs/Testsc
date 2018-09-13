@@ -87,6 +87,7 @@
                         <outlet property="GGCamera" destination="ID8-wV-ydz" id="mux-Em-Zck"/>
                         <outlet property="HuiTu" destination="MMv-PL-vE0" id="URT-a9-2yv"/>
                         <outlet property="ImageFinsh" destination="pzd-Ap-tlD" id="scL-BQ-SqY"/>
+                        <outlet property="vButton" destination="JOa-9O-hGy" id="J1f-Sx-2j3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRb-jF-eaV" userLabel="First Responder" sceneMemberID="firstResponder"/>

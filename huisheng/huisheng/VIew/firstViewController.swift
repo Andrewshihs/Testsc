@@ -19,6 +19,7 @@ class firstViewController: fatherViewController{
     @IBOutlet weak var HuiTu: UIImageView!  //绘图
     @IBOutlet weak var GGCamera: UIButton!  
     @IBOutlet weak var ImageFinsh: UIButton!
+    @IBOutlet weak var vButton :UIButton!
     var averageV: Float = 0.0
     
     var recorder:AVAudioRecorder? //录音器
@@ -42,6 +43,8 @@ class firstViewController: fatherViewController{
             //启动定时器，定时更新录音音量
             print("监听开始")
         }
+        vButton.isEnabled = false
+        
         self.CircleAnimate()
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
@@ -117,6 +120,7 @@ class firstViewController: fatherViewController{
     }
     override func viewWillDisappear(_ animated: Bool) {
         HuiTu.isHidden = true
+        vButton.isEnabled = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
