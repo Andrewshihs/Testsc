@@ -108,7 +108,7 @@ class firstViewController: fatherViewController{
         shapeLayer.strokeStart = 0//描线起始点
         shapeLayer.strokeEnd = 0//描线终点
         shapeLayer.fillColor = UIColor.clear.cgColor//填充色
-        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
     }
     //定时器
     @objc func animate(){

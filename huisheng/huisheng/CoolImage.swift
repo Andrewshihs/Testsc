@@ -56,7 +56,7 @@ class CoolImage {
             return
         }
         var  cImage = CIImage(cgImage: cgimg)
-        let coolfilter = CIFilter(name:"CITwirlDistortion")  //CIBumpDistortion
+        let coolfilter = CIFilter(name:"CIBumpDistortion")  //CIBumpDistortion
         let param = [CIDetectorAccuracy: CIDetectorAccuracyHigh]  // 参数设置(精度设置)
         let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: param)  //创建识别类
         guard let faceArr = faceDetector?.features(in: cImage) else { return }  //找到识别其中的人脸对象
@@ -124,7 +124,7 @@ class CoolImage {
         
     }
     static func coolVoi(value: Int){
-        var choose = (Int)(value/7)
+        var choose = (Int)(value%7)
         if(choose < 0 || choose > 7){
             choose = 0 - choose
         } //选择基调
@@ -137,29 +137,31 @@ class CoolImage {
         }
         var cImage = CIImage(cgImage: cgimg)
         if(true){
-        let coolOne = CIFilter(name:"CITwirlDistortion")
+        let coolOne = CIFilter(name:"CITwirlDistortion")  // 中心扭曲
         coolOne?.setValue(cImage, forKey: "inputImage")
-        coolOne?.setValue(Int(fatherViewController.TempImage.size.width/3), forKey: "inputRadius")
-        //let tempV = Float(value/5)
-        let point = CIVector(x: CGFloat( Float(fatherViewController.TempImage.size.width/2)),y: CGFloat( Float(fatherViewController.TempImage.size.height/2)))
+        coolOne?.setValue(Int(fatherViewController.TempImage.size.width/8*3), forKey: "inputRadius")
+        let point = CIVector(x: CGFloat(Float(fatherViewController.TempImage.size.width/2)),y: CGFloat(Float(fatherViewController.TempImage.size.height/2)))
         coolOne?.setValue(point, forKey: "inputCenter")
         cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-        if(true){
-            let coolOne = CIFilter(name:"CIPinchDistortion")
+        if(value%2 != 0){
+            let coolOne = CIFilter(name:"CITorusLensDistortion")  //中心圆环
             coolOne?.setValue(cImage, forKey: "inputImage")
-            //coolOne?.setValue(Int(fatherViewController.TempImage.size.width/3), forKey: "inputRadius")
-            //let tempV = Float(value/5)
+            coolOne?.setValue(Int(fatherViewController.TempImage.size.width/3), forKey: "inputRadius")
+            coolOne?.setValue(fatherViewController.TempImage.size.width/3, forKey: "inputWidth")
             let point = CIVector(x: CGFloat( Float(fatherViewController.TempImage.size.width/2)),y: CGFloat( Float(fatherViewController.TempImage.size.height/2)))
-            //coolOne?.setValue(point, forKey: "inputCenter")
+            coolOne?.setValue(point, forKey: "inputCenter")
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-        if(true){
-            let coolOne = CIFilter(name:"CITorusLensDistortion")
+        if(value%2 == 0){
+            let coolOne = CIFilter(name:"CITwirlDistortion")  //中心旋转
             coolOne?.setValue(cImage, forKey: "inputImage")
+            let point = CIVector(x: CGFloat( Float(fatherViewController.TempImage.size.width/2)),y: CGFloat( Float(fatherViewController.TempImage.size.height/2)))
+            coolOne?.setValue(point, forKey: "inputCenter")
+            coolOne?.setValue(value+200, forKey: "inputRadius")
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-        
+     
         //let result = coolOne?.value(forKey: kCIOutputImageKey)
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
         let imageRef = context.createCGImage(cImage as! CIImage, from: rect)
@@ -171,4 +173,4 @@ class CoolImage {
 //测试成果记录
 //CITorusLensDistortion  圆环
 //CITwirlDistortion  扭转。 人脸混合参数
-//CIPinchDistortion  聚拢
+//CIPinchDistortion  聚拢  人脸可以试试
