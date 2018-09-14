@@ -175,9 +175,13 @@ class CoolImage {
            
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-        
-        
-        //let result = coolOne?.value(forKey: kCIOutputImageKey)
+        if(true){  // no face 改变色调
+            let coolfilter = CIFilter(name:"CIHueAdjust")
+            coolfilter?.setValue(cImage, forKey: "inputImage")
+            coolfilter?.setValue(value, forKey: "inputAngle")
+            cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
+    
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
         let imageRef = context.createCGImage(cImage as! CIImage, from: rect)
         let image = UIImage(cgImage: imageRef!)
