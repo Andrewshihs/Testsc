@@ -27,28 +27,21 @@ class firstViewController: fatherViewController{
     var recorderSeetingsDic:[String : Any]? //录音器设置参数数组
     var volumeTimer:Timer! //定时器线程，循环监测录音的音量大小
     var aacPath:String? //录音存储路径
-    
+    @IBAction func CGCame(){
+        recorder?.stop()    //停止录音
+        recorder = nil  //录音器释放
+        volumeTimer.invalidate()  //暂停定时器
+        volumeTimer = nil
+    }
     @IBAction func VoiceButton(_ sender: UIButton) {
         GGCamera.isHidden = true
         HuiTu.image = fatherViewController.TempImage
-        recorder = try! AVAudioRecorder(url: URL(string: aacPath!)!,
-                                        settings: recorderSeetingsDic!)
-        if recorder != nil {
-            recorder!.isMeteringEnabled = true  //开启仪表计数功能
-            recorder!.prepareToRecord()    // 准备录音
-            recorder!.record()  //开始录音
-            volumeTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self,
-                                               selector: #selector(audioPowerChange),
-                                               userInfo: nil, repeats: true)
-            //启动定时器，定时更新录音音量
-            print("监听开始")
-        }
         vButton.isEnabled = false
         
         self.CircleAnimate()
     }
     @IBAction func ImageFinsh(_ sender: UIButton) {
-         fatherViewController.TempImage = HuiTu.image!
+        fatherViewController.TempImage = HuiTu.image!
         recorder?.stop()    //停止录音
         recorder = nil  //录音器释放
         volumeTimer.invalidate()  //暂停定时器
@@ -59,17 +52,18 @@ class firstViewController: fatherViewController{
  
     
     @IBAction func OverButton(_ sender: UIButton) {
-        let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
+       let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
         queue.async {
             print("do work")
-            CoolImage.coolVo(value: Int(self.averageV+100))
+            CoolImage.coolVoi(value: Int(self.averageV+50))
             self.HuiTu.image = fatherViewController.TempImage
             self.HuiTu.isHidden = false
             print("finsh")
-            DispatchQueue.main.async(execute: {
+           DispatchQueue.main.async(execute: {
+                self.HuiTu.image = fatherViewController.TempImage
                 self.HuiTu.isHidden = false
                 self.HuiTu.reloadInputViews()
-            })
+           })
         }
         ImageFinsh.isHidden = false
     }
@@ -90,6 +84,18 @@ class firstViewController: fatherViewController{
                 AVSampleRateKey : 44100.0 //录音器每秒采集的录音样本数
         ]//初始化字典并添加设置参数
         
+        recorder = try! AVAudioRecorder(url: URL(string: aacPath!)!,
+                                        settings: recorderSeetingsDic!)
+        if recorder != nil {
+            recorder!.isMeteringEnabled = true  //开启仪表计数功能
+            recorder!.prepareToRecord()    // 准备录音
+            recorder!.record()  //开始录音
+            volumeTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self,
+                                               selector: #selector(audioPowerChange),
+                                               userInfo: nil, repeats: true)
+            //启动定时器，定时更新录音音量
+            print("监听开始")
+        }
     }
     
     //圆形进度条动画
