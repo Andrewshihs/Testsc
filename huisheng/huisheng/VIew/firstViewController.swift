@@ -55,7 +55,7 @@ class firstViewController: fatherViewController{
        let queue = DispatchQueue.global(qos: .default)  //开子线程处理图像
         queue.async {
             print("do work")
-            CoolImage.coolVoi(value: Int(self.averageV+50))
+            CoolImage.coolV(value: Int(self.averageV+50))
             self.HuiTu.image = fatherViewController.TempImage
             self.HuiTu.isHidden = false
             print("finsh")

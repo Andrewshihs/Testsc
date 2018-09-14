@@ -12,66 +12,29 @@ import CoreImage
 
 
 class CoolImage {
-    static func cool(value: Int){
-        let context = CIContext(options: nil)
-        guard  let cgimg = fatherViewController.TempImage.cgImage else {
-            print("imageView doesn't have an image!")
-            return
-        }
-        let cImage = CIImage(cgImage: cgimg)
-        let guassinBlur = CIFilter(name:"CIGaussianBlur")
-        guassinBlur?.setValue(cImage, forKey: "inputImage")
-        guassinBlur?.setValue(value, forKey: "inputRadius")
-        let result = guassinBlur?.value(forKey: kCIOutputImageKey)
-        let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
-        let imageRef = context.createCGImage(result as! CIImage, from: rect)
-        let image = UIImage(cgImage: imageRef!)
-        fatherViewController.TempImage = image
-        
-    }
-    static func coolV(value: Int){
-        let context = CIContext(options: nil)
-        guard  let cgimg = fatherViewController.TempImage.cgImage else {
-            print("imageView doesn't have an image!")
-            return
-        }
-        let cImage = CIImage(cgImage: cgimg)
-        let coolfilter = CIFilter(name:"CIBumpDistortion")
-        coolfilter?.setValue(cImage, forKey: "inputImage")
-        coolfilter?.setValue(400, forKey: "inputRadius")
-      // coolfilter?.setValue(0.6, forKey: "inputScale")
-        var point = CIVector(x:fatherViewController.TempImage.size.width/2.0,y:fatherViewController.TempImage.size.height/2.0)
-        coolfilter?.setValue(point, forKey: "inputCenter")  //fliter Postion
-        
-        let result = coolfilter?.value(forKey: kCIOutputImageKey)
-        let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
-        let imageRef = context.createCGImage(result as! CIImage, from: rect)
-        let image = UIImage(cgImage: imageRef as! CGImage)
-        fatherViewController.TempImage = image
-    }
     static func coolFace(value:Float){
         let context = CIContext(options: nil)
         guard  let cgimg = fatherViewController.TempImage.cgImage else {
             print("imageView doesn't have an image!")
             return
         }
+        var flag = 0  //识别人脸标记
         var  cImage = CIImage(cgImage: cgimg)
         let coolfilter = CIFilter(name:"CIBumpDistortion")  //CIBumpDistortion
         let param = [CIDetectorAccuracy: CIDetectorAccuracyHigh]  // 参数设置(精度设置)
         let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: param)  //创建识别类
-        guard let faceArr = faceDetector?.features(in: cImage) else { return }  //找到识别其中的人脸对象
+        guard let faceArr = faceDetector?.features(in: cImage) else {
+            return }  //找到识别其中的人脸对象
         for faceFeature in faceArr {
             guard let feature = faceFeature as? CIFaceFeature else { return }
             //左眼
             if feature.hasLeftEyePosition {
                 let point = CIVector(x:feature.leftEyePosition.x,y:feature.leftEyePosition.y)
-                print("左眼1")
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+83, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
-                print("左眼2")
-                
+                flag = 1
             }
             //右眼
             if feature.hasRightEyePosition {
@@ -80,7 +43,7 @@ class CoolImage {
                 coolfilter?.setValue(value+86, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
-                
+                flag = 1
             }
             if feature.hasMouthPosition {
                 let point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
@@ -88,10 +51,16 @@ class CoolImage {
                 coolfilter?.setValue(value+165, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
+                flag = 1
             }
-        
-        
+            
     }
+        if(flag == 0){  // no face 改变色调
+            let coolfilter = CIFilter(name:"CIHueAdjust")
+            coolfilter?.setValue(cImage, forKey: "inputImage")
+            coolfilter?.setValue(value, forKey: "inputAngle")
+            cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
         let imageRef = context.createCGImage(cImage as! CIImage, from: rect)
         let image = UIImage(cgImage: imageRef as! CGImage)
@@ -123,7 +92,7 @@ class CoolImage {
         fatherViewController.TempImage = image
         
     }
-    static func coolVoi(value: Int){
+    static func coolV(value: Int){
         var choose = (Int)(value%7)
         if(choose < 0 || choose > 7){
             choose = 0 - choose
