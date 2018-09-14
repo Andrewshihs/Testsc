@@ -27,8 +27,7 @@ class CoolImage {
             return }  //找到识别其中的人脸对象
         for faceFeature in faceArr {
             guard let feature = faceFeature as? CIFaceFeature else { return }
-            //左眼
-            if feature.hasLeftEyePosition {
+            if feature.hasLeftEyePosition {//左眼
                 let point = CIVector(x:feature.leftEyePosition.x,y:feature.leftEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+83, forKey: "inputRadius")
@@ -36,8 +35,7 @@ class CoolImage {
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
             }
-            //右眼
-            if feature.hasRightEyePosition {
+            if feature.hasRightEyePosition {//右眼
                 let point = CIVector(x:feature.rightEyePosition.x,y:feature.rightEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+86, forKey: "inputRadius")
@@ -45,7 +43,7 @@ class CoolImage {
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
             }
-            if feature.hasMouthPosition {
+            if feature.hasMouthPosition {  //嘴巴
                 let point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+165, forKey: "inputRadius")
@@ -53,6 +51,7 @@ class CoolImage {
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
             }
+            
             
     }
         if(flag == 0){  // no face 改变色调
