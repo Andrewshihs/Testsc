@@ -12,13 +12,13 @@ import CoreImage
 
 
 class CoolImage {
+    static var flag: Int = 0 //识别人脸标记
     static func coolFace(value:Float){
         let context = CIContext(options: nil)
         guard  let cgimg = fatherViewController.TempImage.cgImage else {
             print("imageView doesn't have an image!")
             return
         }
-        var flag = 0  //识别人脸标记
         var  cImage = CIImage(cgImage: cgimg)
         let coolfilter = CIFilter(name:"CIBumpDistortion")  //CIBumpDistortion
         let param = [CIDetectorAccuracy: CIDetectorAccuracyHigh]  // 参数设置(精度设置)
@@ -28,31 +28,46 @@ class CoolImage {
         for faceFeature in faceArr {
             guard let feature = faceFeature as? CIFaceFeature else { return }
             if feature.hasLeftEyePosition {//左眼
+                if(Int(value)%2 == 0){
                 let point = CIVector(x:feature.leftEyePosition.x,y:feature.leftEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+83, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
+                }
             }
             if feature.hasRightEyePosition {//右眼
+                if(Int(value)%2 == 0){
                 let point = CIVector(x:feature.rightEyePosition.x,y:feature.rightEyePosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+86, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
+                }
             }
             if feature.hasMouthPosition {  //嘴巴
+                if(Int(value)%2 == 0){
                 let point = CIVector(x:feature.mouthPosition.x,y:feature.mouthPosition.y)
                 coolfilter?.setValue(cImage, forKey: "inputImage")
                 coolfilter?.setValue(value+165, forKey: "inputRadius")
                 coolfilter?.setValue(point, forKey: "inputCenter")
                 cImage = coolfilter?.value(forKey: kCIOutputImageKey) as! CIImage
                 flag = 1
+                }
             }
-            
-            
+            if(Int(value)%2 != 0){
+            let firPos = CIVector(x:(feature.rightEyePosition.x+feature.leftEyePosition.x)/2,y:(feature.rightEyePosition.y+feature.rightEyePosition.y)/2)
+            let secPos = CIVector(x:(firPos.x+feature.mouthPosition.x)/2,y:(firPos.y+feature.mouthPosition.y)/2)
+            let coolOne = CIFilter(name:"CIBumpDistortion")
+            let coolRad = Int(pow((secPos.x-feature.rightEyePosition.x)*(secPos.x-feature.rightEyePosition.x)+(secPos.x-feature.rightEyePosition.y)*(secPos.x-feature.rightEyePosition.y),-2))
+            coolOne?.setValue(cImage, forKey: "inputImage")
+            coolOne?.setValue((fatherViewController.TempImage.size.width/3), forKey: "inputRadius")
+            coolOne?.setValue(secPos,forKey: "inputCenter")
+            cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+            flag = 1
+            }
     }
         if(flag == 0){  // no face 改变色调
             let coolfilter = CIFilter(name:"CIHueAdjust")
