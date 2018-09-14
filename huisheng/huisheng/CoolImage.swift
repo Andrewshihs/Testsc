@@ -136,6 +136,12 @@ class CoolImage {
             return
         }
         var cImage = CIImage(cgImage: cgimg)
+        if(value%5 == 3){
+            let coolOne = CIFilter(name:"CIBoxBlur")  //模糊
+            coolOne?.setValue(cImage, forKey: "inputImage")
+            coolOne?.setValue(value+100, forKey: "inputRadius")
+            cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
         if(true){
         let coolOne = CIFilter(name:"CITwirlDistortion")  // 中心扭曲
         coolOne?.setValue(cImage, forKey: "inputImage")
@@ -161,7 +167,7 @@ class CoolImage {
             coolOne?.setValue(value+200, forKey: "inputRadius")
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-     
+        
         //let result = coolOne?.value(forKey: kCIOutputImageKey)
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
         let imageRef = context.createCGImage(cImage as! CIImage, from: rect)
