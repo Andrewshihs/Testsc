@@ -142,7 +142,7 @@ class CoolImage {
             coolOne?.setValue(value+100, forKey: "inputRadius")
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
-        if(true){
+        if(value%3 == 1){
         let coolOne = CIFilter(name:"CITwirlDistortion")  // 中心扭曲
         coolOne?.setValue(cImage, forKey: "inputImage")
         coolOne?.setValue(Int(fatherViewController.TempImage.size.width/8*3), forKey: "inputRadius")
@@ -167,6 +167,46 @@ class CoolImage {
             coolOne?.setValue(value+200, forKey: "inputRadius")
             cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
         }
+        if(value%5 == 2){
+            let coolOne = CIFilter(name:"CICircleSplashDistortion")  //四处飞溅
+            coolOne?.setValue(cImage, forKey: "inputImage")
+            let point = CIVector(x: CGFloat( Float(fatherViewController.TempImage.size.width/2)),y: CGFloat( Float(fatherViewController.TempImage.size.height/2)))
+            coolOne?.setValue(point, forKey: "inputCenter")
+            coolOne?.setValue(value+250, forKey: "inputRadius")
+            cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
+        if(value%4 == 2){
+            let coolOne = CIFilter(name:"CIDroste")  //  循环
+            coolOne?.setValue(cImage, forKey: "inputImage")
+            cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
+        if(value%4 == 3){
+            var choose = (Int)((value-3)%7)  //叠加位图
+            if(choose < 0 || choose > 7){
+                choose = 0 - choose
+            }
+            let coolOne = CIFilter(name:"CIMinimumComponent")
+            let teImage = UIImage(named: "\(choose).jpeg")
+            let ncgimg = teImage?.cgImage
+            var ncImage = CIImage(cgImage: ncgimg!)
+            coolOne?.setValue(ncImage, forKey: "inputImage")
+            ncImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+            let coolTwo = CIFilter(name:"CIDisplacementDistortion")
+            coolTwo?.setValue(cImage, forKey: "inputImage")
+            coolTwo?.setValue(ncImage, forKey: "inputDisplacementImage")
+            cImage = coolTwo?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
+        if(value%6 == 2){
+            let coolOne = CIFilter(name:"CILightTunnel")  //  大型扭转
+            coolOne?.setValue(cImage, forKey: "inputImage")
+            let point = CIVector(x: CGFloat( Float(fatherViewController.TempImage.size.width/2)),y: CGFloat( Float(fatherViewController.TempImage.size.height/2)))
+            coolOne?.setValue(point, forKey: "inputCenter")
+            //coolOne?.setValue(value, forKey: "inputRadius")
+            coolOne?.setValue(value, forKey: "inputRotation")
+           
+            cImage = coolOne?.value(forKey: kCIOutputImageKey) as! CIImage
+        }
+        
         
         //let result = coolOne?.value(forKey: kCIOutputImageKey)
         let rect = CGRect(x: 0, y: 0, width: fatherViewController.TempImage.size.width, height: fatherViewController.TempImage.size.height)
